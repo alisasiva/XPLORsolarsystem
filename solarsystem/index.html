@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>A-Frame Solar System Lab</title>
+    <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+    <script src="planets.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-entity id="cameraMove"position="20 -2 20">
+            <a-camera>
+                <a-cursor color="white"></a-cursor>
+            </a-camera>
+        </a-entity>
+        <a-assets>
+            <img src="https://pixabay.com/get/eb37b00e2dfc083ed1534705fb0938c9bd22ffd41cb1114396f7c679a6/star-2211589_1920.jpg" id="skyTexture">
+            <img id="sun" src="images/sun.jpg">
+            <img id="mercury" src="images/mercury.jpg">
+            <img id="venus" src="images/venus.jpg">
+            <img id="earth" src="images/earth.jpg">
+            <img id="mars" src="images/mars.jpg">
+            <img id="jupiter" src="images/jupiter.jpg">
+            <img id="saturn" src="images/saturn.jpg">
+            <img id="uranus" src="images/uranus.jpg">
+            <img id="neptune" src="images/neptune.jpg">
+            <img id="pluto" src="images/pluto.jpg">
+            <img id="stars" src="images/stars.png">
+            <a-asset-item id="satelliteObj" src="images/satellite.obj"></a-asset-item>
+                <a-asset-item id="satelliteMtl" src="images/satellite.mtl"></a-asset-item>
+                 <img id = "marsBackground" src = "mars/marssurface.jpg">
+        </a-assets>
+        <!--sky-->
+         <a-sky color="black" sound="src: url(SpaceMountain.mp3); autoplay: true" position="0 0 0"></a-sky>
+         
+        <!--planets-->
+
+        <a-sphere material="src: #sun" radius="109" position="-120 0 0">
+        </a-sphere>
+        
+         <a-text visible = true id = "direction" value = "Please click on Mercury (the first planet) to begin :)" color = "white" position = "10 -2 10" width="20"></a-text>
+          <a-text visible = true id = "direction" value = "(don't forget to look at Pluto!)" color = "white" position = "12 -3.5 10" width="20"></a-text>
+         
+         
+        <a-sphere onclick="move2();mercury2appear()" material="src: #mercury" radius="0.9" position="4 0 0" sound="src: url(SpaceMountain.mp3); autoplay: true" position="4 0 0.9">
+            <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation></a-sphere>
+             <a-text visible = false id = "mercuryTitle" value = "Mercury" color = "white" position = "3.72 1.3 0" width="3"></a-text>
+        <a-text visible = false id = "mercuryText" value = "Mercury is the closest planet to the sun and is a solid planet. Due to its location, it is not easily visible from Earth except during the evening. For every two orbits of the Sun, Mercury completes three rotations about its axis. Thirteen times a century, Mercury can be seen from Earth passing across the face of the Sun in an event called a transit. The next Mercury transit will occur on November 11th, 2019." position = "2.7 -1.8 0" width="3"></a-text>
+       
+        
+        
+        <a-sphere onclick="move3();venus2appear()" material="src: #venus" radius="1.2" position="10 0 0" sound="src: url(SpaceMountain.mp3); autoplay: true" position="10 0 1.2">
+            <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+        </a-sphere>
+        <a-text visible = false id = "venusTitle" value = "Venus" color = "white" position = "9.8 1.5 0" width="3"></a-text>
+         <a-text visible = false id = "venusText" value = "Venus is the second planet from the Sun and is a solid planet. Venus is the second brightest object in the night sky after the Moon. Named after the Roman goddess of love and beauty, Venus is sometimes referred to as the Earth’s sister planet due to their similar size and mass. The surface of the planet is covered by a thick layer of clouds made of sulphuric acid." position = "8.5 -1.8 0" width="3"></a-text>
+        
+        
+        <a-sphere onclick="move1();earth2appear()" material="src: #earth" radius="1.5" position="15 0 0" sound="src: url(SpaceMountain.mp3); autoplay: true" position="15 0 1.5">
+            <a-entity scale="0.03 0.03 0.03" obj-model="obj: #satelliteObj; mtl: #satelliteMtl" position="1.8 0 1" rotation="0 30 0"></a-entity>
+            <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+        </a-sphere>
+        <a-text visible = false id = "earthTitle" value = "Earth" color = "white" position = "14.8 2 0" width="3"></a-text>
+         <a-text visible = false id = "earthText" value = "Our home, Earth, is the third planet from the sun and is a solid planet. It is the only known planet to have an atmosphere containing oxygen, liquid water oceans on its surface, and is currently the only known planet to contain life." color = "white" position = "13.7 -2 0" width="3"></a-text>
+        
+        
+        <a-sphere onclick="move4();mars2appear();" material="src: #mars" radius="0.8" position="20 0 0" sound="src: url(SpaceMountain.mp3); autoplay: true" position="20 0 0.8">
+            <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+        </a-sphere>
+        <a-text visible = false id = "marsTitle" value = "Mars" color = "white" position = "19.8 1 0" width="3"></a-text>
+        <a-text visible = false id = "marsText" value = "Mars is the fourth planet from the Sun and is the second smallest planet in the solar system. The planet Mars is capable of holding colonies of humans. The company SpaceX's goal is to establish a permanent colony on Mars within the next 50 to 100 years. SpaceX plans on doing this by using their ITS (Interplanetary Transport System) which uses the companies most powerful rockets capable of carrying up to 100 people each to Mars. " position = "18.5 -1.75 0" width="3"></a-text>
+        
+        
+        <a-sphere onclick="move5();jupiter2appear()" material="src: #jupiter" radius="11.2" position="52 0 0" sound="src: url(SpaceMountain.mp3); autoplay: true" position="52 0 11.2">
+            <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+        </a-sphere>
+         <a-text visible = false id = "jupiterTitle" value = "Jupiter" color = "white" position = "50.5 15 0" width="20"></a-text>
+        <a-text visible = false id = "jupiterText" value = "Jupiter is the fifth planet from the Sun and is a planet made primarily of gas aka a gas giant. Jupiter is the largest planet in the solar system and is two and a half times bigger than all the other planets in the solar system combined. Jupiter's red spot is a hurricane that is the size of at least 3 Earths and has been raging for more than 350 years." position = "42.5 -18 0" width="20"></a-text>
+        
+        <a-sphere onclick="move6();saturn2appear()" material="src: #saturn" radius="9.5" position="96 0 0" sound="src: url(SpaceMountain.mp3); autoplay: true" position="96 0 9.5">
+            <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+        </a-sphere>
+        <a-text visible = false id = "saturnTitle" value = "Saturn" color = "white" position = "94 12 0" width="25"></a-text>
+         <a-text visible = false id = "saturnText" value = "Saturn is the sixth planet from the Sun and is a gas giant. It is the most distant planet that can be seen with the naked eye from Earth. Saturn is the second largest planet in our solar system and is best known for its ring system that was first observed in 1610 by the astronomer Galileo Galilei. Saturn is composed of similar gases to that of Jupiter including hydrogen, helium, and methane." position = "86 -15 0" width="18"></a-text>
+        <a-torus color="#ffecd6" arc="360" radius="17" radius-tubular="0.02" rotation="83 0 0" position="96 0 0"></a-torus>
+        <a-torus color="#d6a05e" arc="360" radius="16.75" radius-tubular="0.02" rotation="83 0 0" position="96 0 0"></a-torus>
+         <a-torus color="#ffecd6" arc="360" radius="16.55" radius-tubular="0.02" rotation="83 0 0" position="96 0 0"></a-torus>
+         <a-torus color="#d6a05e" arc="360" radius="16.39" radius-tubular="0.02" rotation="83 0 0" position="96 0 0"></a-torus>
+        <a-torus color="#d6a05e" arc="360" radius="15.75" radius-tubular="0.02" rotation="83 0 0" position="96 0 0"></a-torus>
+        <a-torus color="#ffecd6" arc="360" radius="15.5" radius-tubular="0.02" rotation="83 0 0" position="96 0 0"></a-torus>
+        <a-torus color="#d6a05e" arc="360" radius="15.2" radius-tubular="0.02" rotation="83 0 0" position="96 0 0"></a-torus>
+        <a-torus color="#ffecd6" arc="360" radius="14.96" radius-tubular="0.02" rotation="83 0 0" position="96 0 0"></a-torus>
+        <a-torus color="#d6a05e" arc="360" radius="13.74" radius-tubular="0.02" rotation="83 0 0" position="96 0 0"></a-torus>
+        <a-torus color="#d6a05e" arc="360" radius="13.58" radius-tubular="0.02" rotation="83 0 0" position="96 0 0"></a-torus>
+        <a-torus color="#ffecd6" arc="360" radius="13.3" radius-tubular="0.02" rotation="83 0 0" position="96 0 0"></a-torus>
+        <a-torus color="#d6a05e" arc="360" radius="12.5" radius-tubular="0.02" rotation="83 0 0" position="96 0 0"></a-torus>
+        <a-torus color="#ffecd6" arc="360" radius="12.3" radius-tubular="0.02" rotation="83 0 0" position="96 0 0"></a-torus>
+        <a-torus color="#d6a05e" arc="360" radius="12.1" radius-tubular="0.02" rotation="83 0 0" position="96 0 0"></a-torus>
+        <a-torus color="#d6a05e" arc="360" radius="11.89" radius-tubular="0.02" rotation="83 0 0" position="96 0 0"></a-torus>
+        
+    
+        <a-sphere onclick="move7();uranus2appear()" material="src: #uranus" radius="4" position="192 0 0" sound="src: url(SpaceMountain.mp3); autoplay: true" position="192 0 4">
+           <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+        </a-sphere>
+        <a-text visible = false id = "uranusTitle" value = "Uranus" color = "white" position = "190 9 0" width="25"></a-text>
+        <a-text visible = false id = "uranusText" value = "Uranus is the seventh planet from the Sun and is a gas giant. While being visible to the naked eye, it was not recognized as a planet due to its dimness and slow orbit. Uranus became the first planet discovered with the use of a telescope. Uranus is tipped over on its side and spins on its axis on a tilt of 98 degrees. It is often described as “rolling around the Sun on its side.”" position = "185 -10 0" width="15"></a-text>
+         <a-torus color="#b1b5bc" arc="360" radius="4.89" radius-tubular="0.02" rotation="0 115 0" position="192 0 0"></a-torus>
+         <a-torus color="#b1b5bc" arc="360" radius="5.07" radius-tubular="0.02" rotation="0 115 0" position="192 0 0"></a-torus>
+         <a-torus color="#b1b5bc" arc="360" radius="5.3" radius-tubular="0.02" rotation="0 115 0" position="192 0 0"></a-torus>
+        <a-torus color="#b1b5bc" arc="360" radius="5.5" radius-tubular="0.02" rotation="0 115 0" position="192 0 0"></a-torus>
+        <a-torus color="#b1b5bc" arc="360" radius="5.73" radius-tubular="0.02" rotation="0 115 0" position="192 0 0"></a-torus>
+        <a-torus color="#b1b5bc" arc="360" radius="5.8" radius-tubular="0.02" rotation="0 115 0" position="192 0 0"></a-torus>
+        <a-torus color="#b1b5bc" arc="360" radius="5.98" radius-tubular="0.02" rotation="0 115 0" position="192 0 0"></a-torus>
+        <a-torus color="#b1b5bc" arc="360" radius="6" radius-tubular="0.02" rotation="0 115 0" position="192 0 0"></a-torus>
+        
+        
+        <a-sphere onclick="move8();neptune2appear()" material="src: #neptune" radius="3.9" position="302.5 0 0" sound="src: url(SpaceMountain.mp3); autoplay: true" position="302.5 0 3.9">
+            <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+        </a-sphere>
+         <a-text visible = false id = "neptuneTitle" value = "Neptune" color = "white" position = "301 5 0" width="15"></a-text>
+        <a-text visible = false id = "neptuneText" value = "Neptune, a gas giant, is the eighth planet from the Sun making it the most distant planet in the solar system. This gas giant planet may have formed much closer to the Sun in early solar system history before migrating to its present position. Neptune is the smallest of the gas giants but has a very active climate that has storms with winds up to 1,342 miles per hour." position = "297.5 -6.5 1" width="11"></a-text>
+        
+        <a-sphere onclick="move9();pluto2appear()" material="src: #pluto" radius="0.8" position="320 0 0" sound="src: url(SpaceMountain.mp3); autoplay: true" position="320 0 0.8">
+            <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+        </a-sphere>
+ <a-text visible = false id = "plutoTitle" value = "Pluto" color = "white" position = "319.8 1 0" width="3"></a-text>
+        <a-text visible = false id = "plutoText" value = "Although Pluto has not been considered a planet since 2006, we couldn't leave Pluto out. Discovered in 1930, the dwarf planet Pluto is 1/3 water and 2/3 rock. The water on Pluto is contained in very thick sheets of ice due to the fact that the warmest it ever gets on Pluto is -369 degrees farenheit." position = "318.5 -1.4 0" width="3"></a-text>
+    
+    </a-scene>
+</body>
+
+</html>

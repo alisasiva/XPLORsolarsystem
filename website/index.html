@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>XPLOR - explore space </title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Syncopate" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .bs-example {
+            margin: 6px;
+            display: inline-block;
+        }
+        
+        .modal-content iframe {
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            /* Get iframe src attribute value i.e. YouTube video url
+            and store it in a variable */
+            var url = $("#cartoonVideo").attr('src');
+
+            /* Assign empty url value to the iframe src attribute when
+            modal hide, which stop the video playing */
+            $("#myModal").on('hide.bs.modal', function() {
+                $("#cartoonVideo").attr('src', '');
+            });
+
+            /* Assign the initially stored url back to the iframe src
+            attribute when modal is displayed again */
+            $("#myModal").on('show.bs.modal', function() {
+                $("#cartoonVideo").attr('src', url);
+            });
+        });
+    </script>
+
+</head>
+
+<!--navbar-->
+
+<body>
+    <nav class="navbar navbar-default">
+
+        <div class="container-fluid" id="navbar">
+            <!--<div class="row">-->
+            <div class="dropdown" id="planets">
+
+
+                <img id="xplorlogo" src="images/xplorlogo.jpg">
+
+
+                <ul class="nav navbar-nav navbar-right">
+<!--MERCURY MODAL-->
+                    <div class="bs-example">
+                        <!-- Button HTML (to Trigger Modal) -->
+                        <a href="#myModal" data-toggle="modal" style="color:#E04A3E; line-height: 50px" id="Mercury">Mercury</a>
+
+                        <!-- Modal HTML -->
+                        <div id="myModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        <h4 class="modal-title" style="color:#1C4587">Mercury</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/bX4riPijwWc?ecver=1" frameborder="0" allowfullscreen></iframe> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!--END MERCURY MODAL-->
+<!--VENUS MODAL-->
+                <div class="bs-example">
+                        <!-- Button HTML (to Trigger Modal) -->
+                        <a href="#venusModal" data-toggle="modal" style="color:#E04A3E; line-height: 50px" id="Venus">Venus</a>
+
+                        <!-- Modal HTML -->
+                        <div id="venusModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        <h4 class="modal-title" style="color:#1C4587">Venus</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/14gsV5fkhFU?ecver=1" frameborder="0" allowfullscreen></iframe> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+<!--END VENUS MODAL-->
+<!--EARTH MODAL-->
+<div class="bs-example">
+                        <!-- Button HTML (to Trigger Modal) -->
+                        <a href="#earthModal" data-toggle="modal" style="color:#E04A3E; line-height: 50px" id="Earth">Earth</a>
+
+                        <!-- Modal HTML -->
+                        <div id="earthModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        <h4 class="modal-title" style="color:#1C4587">Earth</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/-TNS9J_OIV0?ecver=1" frameborder="0" allowfullscreen></iframe> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!--END EARTH MODAL-->
+<!--MARS MODAL-->
+<div class="bs-example">
+    
+                        <!-- Button HTML (to Trigger Modal) -->
+                        <a href="#marsModal" data-toggle="modal" style="color:#E04A3E; line-height: 50px" id="Mars">Mars</a>
+
+                        <!-- Modal HTML -->
+                        <div id="marsModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        <h4 class="modal-title" style="color:#1C4587">Mars</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Prj5uxZOd2s?ecver=1" frameborder="0" allowfullscreen></iframe> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!--END MARS MODAL-->
+<!--JUPITER MODAL-->
+<div class="bs-example">
+    
+                        <!-- Button HTML (to Trigger Modal) -->
+                        <a href="#jupiterModal" data-toggle="modal" style="color:#E04A3E; line-height: 50px" id="Jupiter">Jupiter</a>
+
+                        <!-- Modal HTML -->
+                        <div id="jupiterModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        <h4 class="modal-title" style="color:#1C4587">Jupiter</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/BZnDB5VJiT8?ecver=1" frameborder="0" allowfullscreen></iframe> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!--END JUPITER MODAL-->
+<!--SATURN MODAL-->
+<div class="bs-example">
+              <!-- Button HTML (to Trigger Modal) -->
+                        <a href="#saturnModal" data-toggle="modal" style="color:#E04A3E; line-height: 50px" id="Saturn">Saturn</a>
+
+                        <!-- Modal HTML -->
+                        <div id="saturnModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        <h4 class="modal-title" style="color:#1C4587">Saturn</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/KDX1likfogQ?ecver=1" frameborder="0" allowfullscreen></iframe> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!--END SATURN MODAL-->
+<!--URANUS MODAL-->
+<div class="bs-example">
+                <!-- Button HTML (to Trigger Modal) -->
+                        <a href="#uranusModal" data-toggle="modal" style="color:#E04A3E; line-height: 60px" id="Uranus">Uranus</a>
+
+                        <!-- Modal HTML -->
+                        <div id="uranusModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        <h4 class="modal-title" style="color:#1C4587">Uranus</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/9pFs5PmIsLg?ecver=1" frameborder="0" allowfullscreen></iframe> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!--END URANUS MODAL-->
+<!--NEPTUNE MODAL-->
+<div class="bs-example">
+            <!-- Button HTML (to Trigger Modal) -->
+                        <a href="#neptuneModal" data-toggle="modal" style="color:#E04A3E; line-height: 50px" id="Neptune">Neptune</a>
+
+                        <!-- Modal HTML -->
+                        <div id="neptuneModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        <h4 class="modal-title" style="color:#1C4587">Neptune</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/7wm8Uinm5OM?ecver=1" frameborder="0" allowfullscreen></iframe> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!--END NEPTUNE MODAL-->
+<!--PLUTO MODAL-->
+<div class="bs-example">
+            <!-- Button HTML (to Trigger Modal) -->
+                        <a href="#plutoModal" data-toggle="modal" style="color:#E04A3E; line-height: 50px" id="Pluto">Pluto</a>
+
+                        <!-- Modal HTML -->
+                        <div id="plutoModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        <h4 class="modal-title" style="color:#1C4587">Pluto</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/YjUXY9Ncp3c?ecver=1" frameborder="0" allowfullscreen></iframe> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!--END PLUTO MODAL-->
+                </ul>
+                
+            </div>
+    </nav>
+    <!--jumbotron pics and text-->
+    <div class="jumbotron" id="piconjumbotron" style="height: 600px;">
+        <h1>
+            <script>
+            </script>
+        </h1>
+        <p>
+            <div class="btn btn-secondary btn-lg" id="textonbutton">
+                <a>
+                    <input class="btn btn-secondary btn-lg" type="button" value="Get Spacey!" style="color:#E04A3E; height:100px;width:200px" onclick="location.href = 'https://preview.c9users.io/rbecnel03/finalproject/solarsystem/index.html?_c9_id=livepreview3&_c9_host=https://ide.c9.io';">
+                </a>
+
+            </div>
+        </p>
+    </div>
+
+    </div>
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div id="bottomrocksalt">
+            Created by
+            <div id="bottomsyncopate">
+                Ally, Sydney, and Reagan
+            </div>
+        </div>
+    </nav>
+
+  
+    </div>
+
+</body>
+<body>
+    <div style="text-align:center">
+        <a class="twitter-timeline"
+        href="https://twitter.com/NASA"
+       data-height="950"
+        data-width="1000"
+        
+        >
+            Tweets by NASA 
+
+        </a> 
+        <script async src="//platform.twitter.com/widgets.js"
+        charset="utf-8"></script>        
+
+    </div>
+    
+    
+</body>
+
+
+</html>
